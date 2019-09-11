@@ -375,14 +375,14 @@ $(document).ready(function() {
     try{
 
 			//##Displaying messaging in Clinic Console
-			var clinicsocket = new WebSocket("ws://clinicservice-fusedemo.e4ff.pro-eu-west-1.openshiftapps.com/demo");
+			var clinicsocket = new WebSocket("ws://clinicservicews-fusedemo.e4ff.pro-eu-west-1.openshiftapps.com/demo");
 			clinicsocket.onopen = function(){ clinicMessage('Starting Clinic System Simulator v 1.0.0 ......');}
 			clinicsocket.onmessage = function(msg){clinicMessage('Patient===> '+msg.data+' admitted!');}
 			clinicsocket.onclose = function(){clinicMessage('Clinic System shutdown...');}
     	function clinicMessage(msg){$('#clinicDiv').html(message(clinicConsoleArray,msg));}
 
 			//##Displaying messaging in Laboratory Console
-			var labsocket = new WebSocket("ws://laboratoryservice-fusedemo.e4ff.pro-eu-west-1.openshiftapps.com/demo");
+			var labsocket = new WebSocket("ws://laboratoryservicews-fusedemo.e4ff.pro-eu-west-1.openshiftapps.com/demo");
 			labsocket.onopen = function(){ labMessage('Starting Laboratory System Simulator v 1.4.0 ......');}
 			labsocket.onmessage = function(msg){labMessage(msg.data);}
 			labsocket.onclose = function(){labMessage('Laboratory System shutdown...');}
